@@ -32,4 +32,18 @@ ENV NAME="Tablo 4th Gen Proxy" \
     USER_NAME="user" \
     USER_PASS="pass"
 
-CMD node app.js --name $NAME --id $DEVICE_ID --interval $LINEUP_UPDATE_INTERVAL --xml $CREATE_XML --days $GUIDE_DAYS --pseudo $INCLUDE_PSEUDOTV_GUIDE --level $LOG_LEVEL --log $SAVE_LOG --outdir /output --user $USER_NAME --pass $USER_PASS
+CMD [
+  "node",
+  "app.js",
+  "--name", "${NAME}",
+  "--id", "${DEVICE_ID}",
+  "--interval", "${LINEUP_UPDATE_INTERVAL}",
+  "--xml", "${CREATE_XML}",
+  "--days", "${GUIDE_DAYS}",
+  "--pseudo", "${INCLUDE_PSEUDOTV_GUIDE}",
+  "--level", "${LOG_LEVEL}",
+  "--log", "${SAVE_LOG}",
+  "--outdir", "/output",
+  "--user", "${USER_NAME}",
+  "--pass", "${USER_PASS}"
+]
